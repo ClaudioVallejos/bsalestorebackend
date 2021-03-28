@@ -1,5 +1,8 @@
 const connection = require('../config/conection');
 
+//Objeto con metodos. Busqueda con query a la bd  
+//export a controller
+
 const dataModels = {
   getAllProducts: (callback) => {
     if (connection) {
