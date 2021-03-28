@@ -1,6 +1,8 @@
 const mysqlConnection = require("../config/conection");
 const dataModels = require("../models/category.model");
 
+//muestra todas las categorias según query del modelo
+
 function showAllCategories(req, res) {
   if (!mysqlConnection) {
     res.json({ message: "category controller no have conection to BD" });
@@ -11,6 +13,8 @@ function showAllCategories(req, res) {
     });
   }
 }
+
+//muestra una categoria según query del modelo
 
 function showOneCategory(req, res) {
   if (!mysqlConnection) {
@@ -24,6 +28,8 @@ function showOneCategory(req, res) {
     data ? res.json(data) : res.json({ message: "query mistake" });
   });
 }
+
+//muestra una categoria según parámetro de busqueda según query del modelo
 
 function showSpecificCategory(req, res) {
   if (!mysqlConnection) {

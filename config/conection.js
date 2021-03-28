@@ -1,3 +1,5 @@
+//configuración a la base de datos
+
 const mysql = require("mysql");
 const bd = require("./env.json");
 
@@ -11,6 +13,7 @@ const objConnection = {
 
 const myConnection = mysql.createConnection(objConnection);
 
+//funcion para conexion
 function handleDiscconect() {
   myConnection.connect((err) => {
     if (err) {
@@ -21,7 +24,7 @@ function handleDiscconect() {
     }
   });
 
-  //manejo de error de desconexión
+  //manejo de error de desconexión de bd
   myConnection.on("error", (err) => {
     console.log("db error", err);
     if (err.code === "PROTOCOL_CONNECTION_LOST") {

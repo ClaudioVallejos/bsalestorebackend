@@ -1,6 +1,8 @@
 const mysqlConnection = require("../config/conection");
 const dataModels = require("../models/product.model");
 
+//funcion que muestra todos los productos según query del modelo
+
 function showAllProducts(req, res) {
   if (!mysqlConnection) {
     res.json({ message: "product controller no have conection to BD" });
@@ -11,6 +13,8 @@ function showAllProducts(req, res) {
     });
   }
 }
+
+//muestra un producto según id según query del modelo
 
 function showOneProduct(req, res) {
   if (!mysqlConnection) {
@@ -25,6 +29,8 @@ function showOneProduct(req, res) {
   });
 }
 
+//muestra un producto según parámetro de busqueda según query del modelo
+ 
 function searchProduct(req, res) {
   if (!mysqlConnection) {
     res.json({ message: "product controller no have conection to BD" });
